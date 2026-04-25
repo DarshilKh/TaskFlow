@@ -1,10 +1,23 @@
-# ✅ TaskFlow — Task Manager
+<div align="center">
 
-A full-stack Task Manager built with React 19 + Vite (frontend) and Spring Boot 3 (backend).  
-Focused on clean architecture, fast UI interactions, and production-ready structure.
+# ✅ TaskFlow
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit-6366f1?style=for-the-badge&logo=vercel)](https://taskflow0021.netlify.app/)
+### Full-Stack Task Manager — React + Spring Boot
 
+A modern full-stack task management app with clean UI,  
+fast interactions, and production-ready architecture.
+
+[![Live Demo](https://img.shields.io/badge/▲%20LIVE%20DEMO-VISIT-6366f1?style=for-the-badge)](https://taskflow0021.netlify.app/)
+[![API](https://img.shields.io/badge/API-LIVE-22c55e?style=for-the-badge)](http://localhost:8080)
+
+<br/>
+
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+
+</div>
 ---
 
 ## 🚀 Highlights
