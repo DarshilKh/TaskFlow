@@ -1,105 +1,138 @@
-# TaskFlow — Task Manager
+# ✅ TaskFlow — Task Manager
 
-A full-stack Task Manager built with **React 19 + Vite** (frontend) and **Spring Boot 3** (backend).
+A full-stack Task Manager built with React 19 + Vite (frontend) and Spring Boot 3 (backend).  
+Focused on clean architecture, fast UI interactions, and production-ready structure.
 
----
-
-## Tech Stack
-
-| Layer    | Technology                          |
-|----------|-------------------------------------|
-| Frontend | React 19, Vite, JSX, Tailwind CSS   |
-| Backend  | Spring Boot 3.2, Java 17, Maven     |
-| Storage  | In-memory (ConcurrentHashMap)       |
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit-6366f1?style=for-the-badge&logo=vercel)](https://taskflow0021.netlify.app/)
 
 ---
 
-## Prerequisites
+## 🚀 Highlights
 
-- **Java 17+**
-- **Maven 3.8+**
-- **Node.js 18+**
-
----
-
-## Running Locally
-
-### 1. Backend (Spring Boot)
-
-```bash
-cd backend
-mvn spring-boot:run
-```
-
-The API will start on **http://localhost:8080**.
-
-### 2. Frontend (React + Vite)
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-The app will be available at **http://localhost:5173**.
-
-Vite proxies `/tasks` requests to `localhost:8080`, so no CORS config is needed in dev.
+- Full-stack CRUD application with clean separation  
+- Optimistic UI updates for instant user feedback  
+- RESTful API design with structured response format  
+- Dockerized setup for consistent environment  
+- Lightweight architecture using in-memory storage  
 
 ---
 
-## Running with Docker
+## 🛠️ Tech Stack
 
-```bash
-docker compose up --build
-```
+### 💻 Frontend
+- React 19  
+- Vite  
+- Tailwind CSS  
+
+### ⚙️ Backend
+- Spring Boot 3.2  
+- Java 17  
+- Maven  
+
+### 🧠 Storage
+- In-memory (ConcurrentHashMap)  
+
+---
+
+## ⚡ Features
+
+- Create, view, update, and delete tasks  
+- Inline task editing  
+- Filter tasks (All / Active / Completed)  
+- Progress tracking with visual indicator  
+- Loading states and error handling  
+- Optimistic UI updates for better UX  
+
+---
+
+## 🚀 Running Locally
+
+### Backend
+
+cd backend  
+mvn spring-boot:run  
+
+API runs on: http://localhost:8080  
+
+---
+
+### Frontend
+
+cd frontend  
+npm install  
+npm run dev  
+
+App runs on: http://localhost:5173  
+
+(Vite proxies API requests → no CORS issues in development)
+
+---
+
+## 🐳 Running with Docker
+
+docker compose up --build  
 
 - Frontend → http://localhost:80  
-- Backend → http://localhost:8080
+- Backend → http://localhost:8080  
 
 ---
 
-## API Reference
+## 📡 API Reference
 
-| Method | Endpoint       | Description          | Body                                    |
-|--------|----------------|----------------------|-----------------------------------------|
-| GET    | /tasks         | List all tasks       | —                                       |
-| POST   | /tasks         | Create a task        | `{ "title": "..." }`                    |
-| PATCH  | /tasks/:id     | Update title/status  | `{ "completed": true, "title": "..." }` |
-| DELETE | /tasks/:id     | Delete a task        | —                                       |
+GET /tasks → List all tasks  
 
-All responses follow the envelope:
-```json
-{
-  "success": true,
-  "message": "...",
-  "data": { ... }
-}
-```
+POST /tasks  
+Body: { "title": "..." }  
 
----
+PATCH /tasks/:id  
+Body: { "completed": true, "title": "..." }  
 
-## Running Tests
+DELETE /tasks/:id → Delete task  
 
-```bash
-cd backend
-mvn test
-```
+Response format:  
+{  
+  "success": true,  
+  "message": "...",  
+  "data": { ... }  
+}  
 
 ---
 
-## Features
+## 🧪 Running Tests
 
-- **Core**: Create, view, complete, and delete tasks
-- **Bonus**: Edit task titles inline, filter by All / Active / Done, progress bar
-- Loading skeletons and per-action error handling
-- Optimistic UI updates (state updated immediately on action)
+cd backend  
+mvn test  
 
 ---
 
-## Assumptions & Trade-offs
+## 🧾 Engineering Decisions
 
-- **In-memory storage**: Tasks are lost on server restart. This satisfies the assignment requirement and avoids the overhead of a database setup. Swapping to JPA + H2/Postgres would require only a repository change.
-- **No auth**: Out of scope for this exercise.
-- **Single module**: Both frontend and backend live in one repo for submission simplicity. In production these would be separate repos/services.
-- **Sorting**: Tasks are displayed newest-first using `createdAt` timestamp on the client side.
-- **CORS**: `@CrossOrigin(origins = "*")` is used for simplicity. In production this would be locked to specific origins via a `CorsConfigurationSource` bean.
+- In-memory storage → fast setup, no DB overhead  
+- Optimistic UI → better perceived performance  
+- Single repo → simplified development and deployment  
+- CORS open → simplified dev (restricted in production)  
+- Client-side sorting using createdAt  
+
+---
+
+## 📈 What This Project Demonstrates
+
+- Full-stack application development  
+- REST API design and integration  
+- State management and UI optimization  
+- Backend architecture using Spring Boot  
+- Clean, maintainable code practices  
+
+---
+
+## ⚠️ Trade-offs
+
+- No persistent storage (data resets on restart)  
+- No authentication (out of scope)  
+- Not horizontally scalable (in-memory design)  
+
+---
+
+## ⭐ If you found this useful
+
+Consider giving a star — it helps visibility.
